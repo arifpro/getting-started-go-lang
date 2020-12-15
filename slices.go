@@ -28,4 +28,38 @@ func main() {
 	// slice
 	slice := []int{1, 2, 3, 4}
 	fmt.Println(slice)  //  [1 2 3 4]
+
+
+	/*
+	// make()
+		* create a slice (and array) using make()
+		* make(type, length/capacity)
+		* make(type, length, capacity)
+	*/
+	sli1 := make([]int, 10)
+	sli2 := make([]int, 10, 15)
+
+	fmt.Println(sli1)  // [0 0 0 0 0 0 0 0 0 0]
+	fmt.Println(sli2)  // [0 0 0 0 0 0 0 0 0 0]
+
+	fmt.Println(len(sli1), cap(sli1))  // 10 10
+	fmt.Println(len(sli2), cap(sli2))  // 10 15
+
+
+	/*
+	// append()
+		* size of a slice can be increased by append()
+		* adds elements to the end of a slice
+		* inserts into underlying array
+	*/
+
+	// increases size of array if necessary
+	sli := make([]int, 0, 3)
+	fmt.Println(sli)  // []
+	fmt.Println(len(sli))  // 0
+
+	// length of sli is 0
+	sli = append(sli, 100)
+	fmt.Println(sli)  // [100]
+	fmt.Println(len(sli))  // 1
 }
